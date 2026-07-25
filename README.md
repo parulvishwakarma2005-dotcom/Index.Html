@@ -6,7 +6,7 @@
 <title>Paro Online Portal</title>
 
 <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
