@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+body{
+    background:#f2f5ff;
+    padding:30px;
+}
+.container{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+h2{
+    text-align:center;
+    color:#004aad;
+    margin-bottom:20px;
+}
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
+}
+input,select,textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:15px;
+}
+textarea{
+    resize:vertical;
+}
+.gender{
+    margin-top:8px;
+}
+.gender input{
+    width:auto;
+    margin-right:5px;
+}
+button{
+    width:48%;
+    padding:12px;
+    margin-top:20px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+.submit{
+    background:#004aad;
+}
+.reset{
+    background:#e53935;
+}
+button:hover{
+    opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Application Form</h2>
+
+<form action="#" method="post" enctype="multipart/form-data">
+
+<label>First Name</label>
+<input type="text" name="firstname" required>
+
+<label>Last Name</label>
+<input type="text" name="lastname" required>
+
+<label>Father's Name</label>
+<input type="text" name="fathername" required>
+
+<label>Mother's Name</label>
+<input type="text" name="mothername" required>
+
+<label>Date of Birth</label>
+<input type="date" name="dob" required>
+
+<label>Gender</label>
+<div class="gender">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+</div><label>Category</label>
+<select name="category" required>
+    <option value="">-- Select Category --</option>
+    <option>General</option>
+    <option>OBC</option>
+    <option>SC</option>
+    <option>ST</option>
+    <option>EWS</option>
+</select>
+
+<label>Mobile Number</label>
+<input type="tel" name="mobile" maxlength="10" required>
+
+<label>Email Address</label>
+<input type="email" name="email" required>
+
+<label>Aadhaar Number</label>
+<input type="text" name="aadhaar" maxlength="12">
+
+<label>Address</label>
+<textarea name="address" rows="4" required></textarea>
+
+<label>State</label>
+<input type="text" name="state" required>
+
+<label>District</label>
+<input type="text" name="district" required>
+
+<label>City</label>
+<input type="text" name="city" required>
+
+<label>PIN Code</label>
+<input type="text" name="pincode" maxlength="6" required>
+
+<label>Qualification</label>
+<select name="qualification" required>
+    <option value="">-- Select Qualification --</option>
+    <option>10th</option>
+    <option>12th</option>
+    <option>Diploma</option>
+    <option>Graduate</option>
+    <option>Post Graduate</option>
+</select>
+
+<label>Course Name</label>
+<input type="text" name="course" required>
+
+<label>Upload Photo</label>
+<input type="file" name="photo" accept="image/*">
+
+<label>Upload Signature</label>
+<input type="file" name="signature" accept="image/*">
+
+<br><br>
+
+<input type="checkbox" required>
+I declare that the information given above is true and correct.
+
+<br><br>
+
+<button type="submit" class="submit">Submit</button>
+<button type="reset" class="reset">Reset</button>
+
+</form>
+</div>
+
+</body>
+</html>
