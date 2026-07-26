@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f2f2f2;
+}
+
+.header{
+    background:#004080;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:600px;
+    margin:20px auto;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+<h1>Parul Online Portal</h1>
+<h2>Admin Dashboard</h2>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h3>Total Students</h3>
+<p>0</p>
+</div>
+
+<div class="card">
+<button>View Applications</button>
+</div>
+
+<div class="card">
+<button>College Applications</button>
+</div>
+
+<div class="card">
+<button>Job Applications</button>
+</div>
+
+<div class="card">
+<button>Download Data</button>
+</div>
+
+<div class="card">
+  <h2>Applications List</h2>
+
+<table border="1" width="100%" cellpadding="10">
+<tr>
+    <th>Name</th>
+    <th>Father Name</th>
+    <th>Mobile</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+<tr>
+    <td>Demo User</td>
+    <td>Demo Father</td>
+    <td>9876543210</td>
+    <td>Pending</td>
+    <td>
+        <button>Approve</button>
+        <button>Reject</button>
+    </td>
+</tr>
+
+</table>
+<button onclick="location.href='index.html'">Logout</button>
+</div>
+
+</div>
+
+</body>
+</html>
