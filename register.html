@@ -77,6 +77,25 @@ text-decoration:none;
 </a>
 
 </div>
+<script type="module">
+import { auth } from "./firebase.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const form = document.querySelector("form");
+const email = document.querySelector('input[type="email"]');
+const password = document.querySelector('input[type="password"]');
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    await createUserWithEmailAndPassword(auth, email.value, password.value);
+    alert("पंजीकरण सफल हुआ!");
+    window.location.href = "login.html";
+  } catch (error) {
+    alert(error.message);
+  }
+});
+</script>
 </body>
 </html>
