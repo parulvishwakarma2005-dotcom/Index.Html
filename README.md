@@ -17,12 +17,12 @@
 </div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="apply.html">Apply Form</a>
-<a href="status.html">Status</a>
-<a href="login.html">Login</a>
-<a href="register.html">Register</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">Home</a><br>
+<a href="apply.html">Apply Form</a><br>
+<a href="status.html">Status</a><br>
+<a href="login.html">Login</a><br>
+<a href="register.html">Register</a><br>
+<a href="contact.html">Contact</a><br>
 </nav>
 
 </header>
