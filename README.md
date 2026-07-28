@@ -30,13 +30,19 @@
 </header>
 
 <section class="hero">
+
+<marquee>
 marquee {
     font-family: Georgia, serif;
     font-size: 22px;
-    color: darkred;
+    color: red;
 }
+
 <h1>Welcome to Paro Online Portal</h1>
+
+
 </marquee>
+
 <p>
 Apply online forms easily from anywhere.
 Fast, Secure and Easy.
