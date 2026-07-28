@@ -13,7 +13,9 @@
 <header>
 
 <div class="logo">
+  <marquee>
 <h2>Paro Online Portal</h2>
+</marquee>
 </div>
 
 <nav>
