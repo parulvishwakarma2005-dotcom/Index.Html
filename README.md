@@ -13,9 +13,9 @@
 <header>
 
 <div class="logo">
-  <marquee>
+  
 <h2>Paro Online Portal</h2>
-</marquee>
+
 </div>
 
 <nav>
@@ -30,9 +30,13 @@
 </header>
 
 <section class="hero">
-
+marquee {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: darkred;
+}
 <h1>Welcome to Paro Online Portal</h1>
-
+</marquee>
 <p>
 Apply online forms easily from anywhere.
 Fast, Secure and Easy.
