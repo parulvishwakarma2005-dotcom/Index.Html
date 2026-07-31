@@ -22,6 +22,8 @@
 <a href="index.html">Home</a><br>
 <a href="apply.html">Apply Form</a><br>
 <a href="status.html">Status</a><br>
+<a href="login.html">login</a><br>
+  <a href="register.html">register</a><br>
 <a href="contact.html">Contact</a><br>
 </nav>
 
