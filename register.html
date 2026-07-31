@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parul Online Portal - Register</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+width:90%;
+max-width:400px;
+background:#fff;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
+}
+
+h1{
+text-align:center;
+color:#004080;
+margin-bottom:10px;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#007bff;
+color:#fff;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+#error{
+color:red;
+text-align:center;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Parul Online Portal</h1>
+<h2>Register</h2>
+
+<form id="registerForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="Email" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p id="error"></p>
+<p style="text-align:center;margin-top:15px;">
+Already have an account?
+</p>
+
+<a href="login.html">
+<button type="button">Login</button>
+</a>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD4oCFvvMFi7VW583J_5Vs7ExYVsOMURcg",
+  authDomain: "parul-online-portal.firebaseapp.com",
+  projectId: "parul-online-portal",
+  storageBucket: "parul-online-portal.firebasestorage.app",
+  messagingSenderId: "93768399802",
+  appId: "1:93768399802:web:ce82a4a1fc867fa74ffb83"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("Registration Successful!");
+    window.location.href = "login.html";
+  } catch (err) {
+    document.getElementById("error").innerText = err.message;
+  }
+});
+</script>
+
+</body>
+</html>
