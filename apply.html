@@ -3,72 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Application Form</title>
+<title>Parul Online Portal - Student Registration</title>
+
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
+
 body{
-    background:#f2f5ff;
-    padding:30px;
+background:#f2f5ff;
+padding:20px;
 }
+
 .container{
-    max-width:700px;
-    margin:auto;
-    background:#fff;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+max-width:700px;
+margin:auto;
+background:#fff;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.2);
 }
+
+h1{
+text-align:center;
+color:#004aad;
+margin-bottom:5px;
+}
+
 h2{
-    text-align:center;
-    color:#004aad;
-    margin-bottom:20px;
+text-align:center;
+margin-bottom:20px;
+color:#333;
 }
+
 label{
-    font-weight:bold;
-    display:block;
-    margin-top:12px;
+display:block;
+margin-top:12px;
+font-weight:bold;
 }
-input,select,textarea{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-size:15px;
-}
+
+input,
+select,
 textarea{
-    resize:vertical;
+width:100%;
+padding:10px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:15px;
 }
+
 .gender{
-    margin-top:8px;
+margin-top:8px;
 }
+
 .gender input{
-    width:auto;
-    margin-right:5px;
+width:auto;
+margin-right:5px;
 }
+
 button{
-    width:48%;
-    padding:12px;
-    margin-top:20px;
-    border:none;
-    border-radius:5px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
+padding:12px;
+width:48%;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+color:#fff;
 }
+
 .submit{
-    background:#004aad;
+background:#004aad;
 }
+
 .reset{
-    background:#e53935;
-}
-button:hover{
-    opacity:0.9;
+background:red;
 }
 </style>
 </head>
@@ -76,10 +89,12 @@ button:hover{
 <body>
 
 <div class="container">
-<h2>Application Form</h2>
-  <h1>Parul Online Portal</h1>
+
+<h1>Parul Online Portal</h1>
 <h2>Student Registration Form</h2>
- <form id="applicationForm">
+
+<form id="applicationForm">
+
 <label>First Name</label>
 <input type="text" name="firstname" required>
 
@@ -96,21 +111,34 @@ button:hover{
 <input type="date" name="dob" required>
 
 <label>Gender</label>
-<div class="gender">
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
-<input type="radio" name="gender"> Other
-</div><label>Category</label>
-<select name="category" required>
-    <option value="">-- Select Category --</option>
-    <option>General</option>
-    <option>OBC</option>
-    <option>SC</option>
-    <option>ST</option>
-    <option>EWS</option>
-</select>
 
-<label>Mobile Number</label>
+<div class="gender">
+
+<input type="radio" name="gender" value="Male" required> Male
+
+<input type="radio" name="gender" value="Female"> Female
+
+<input type="radio" name="gender" value="Other"> Other
+
+</div>
+
+<label>Category</label>
+
+<select name="category" required>
+
+<option value="">Select Category</option>
+
+<option>General</option>
+
+<option>OBC</option>
+
+<option>SC</option>
+
+<option>ST</option>
+
+<option>EWS</option>
+
+</select><label>Mobile Number</label>
 <input type="tel" name="mobile" maxlength="10" required>
 
 <label>Email Address</label>
@@ -136,12 +164,12 @@ button:hover{
 
 <label>Qualification</label>
 <select name="qualification" required>
-    <option value="">-- Select Qualification --</option>
-    <option>10th</option>
-    <option>12th</option>
-    <option>Diploma</option>
-    <option>Graduate</option>
-    <option>Post Graduate</option>
+<option value="">Select Qualification</option>
+<option>10th</option>
+<option>12th</option>
+<option>Diploma</option>
+<option>Graduate</option>
+<option>Post Graduate</option>
 </select>
 
 <label>Course Name</label>
@@ -160,12 +188,52 @@ I declare that the information given above is true and correct.
 
 <br><br>
 
-<button type="submit">Submit Application</button>
+<button type="submit" class="submit">Submit Application</button>
 <button type="reset" class="reset">Reset</button>
 
 </form>
 
+<script type="module">
+import { db } from "./firebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const form = document.getElementById("applicationForm");
+
+form.addEventListener("submit", async (e) => {
+e.preventDefault();
+
+try{
+await addDoc(collection(db,"applications"),{
+firstname: form.firstname.value,
+lastname: form.lastname.value,
+fathername: form.fathername.value,
+mothername: form.mothername.value,
+dob: form.dob.value,
+gender: form.gender.value,
+category: form.category.value,
+mobile: form.mobile.value,
+email: form.email.value,
+aadhaar: form.aadhaar.value,
+address: form.address.value,
+state: form.state.value,
+district: form.district.value,
+city: form.city.value,
+pincode: form.pincode.value,
+qualification: form.qualification.value,
+course: form.course.value
+});
+
+alert("Application Submitted Successfully!");
+form.reset();
+
+}catch(error){
+alert(error.message);
+console.log(error);
+}
+});
+</script>
+
 </div>
 
 </body>
-</html>
+ </html>
