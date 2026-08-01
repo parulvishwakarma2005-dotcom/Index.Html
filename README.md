@@ -59,4 +59,14 @@ Fast, Secure and Easy.
 <div class="card">
 <h3>Download Receipt</h3>
 <p>Download your application receipt.</p>
-</div>parul online portrl
+</div>
+</section>
+
+<footer>
+
+<p>© 2026 Paro Online Portal | All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
